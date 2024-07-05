@@ -1,18 +1,34 @@
 {
   "name": "server-game",
   "version": "1.0.0",
-  "main": "index.js",
+  "description": "this server for game",
+  "main": "src/main.js",
   "type": "module",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node index.js"
+    "test": "jest",
+    "dev": "nodemon src/main.js",
+    "build": "npm install",
+    "start": "node src/main.js"
   },
-  "keywords": [],
-  "author": "",
+  "jest": {
+    "transform": {
+      "^.+\\.[t|j]sx?$": "babel-jest"
+    }
+  },
+  "author": "rusnanda purnama",
   "license": "ISC",
-  "description": "",
   "dependencies": {
+    "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
+    "cors": "^2.8.5",
     "dotenv": "^16.4.5",
-    "express": "^4.19.2"
+    "express": "^4.19.2",
+    "winston": "^3.13.0",
+    "winston-daily-rotate-file": "^5.0.0"
+  },
+  "devDependencies": {
+    "@babel/preset-env": "^7.24.7",
+    "babel-jest": "^29.7.0",
+    "jest": "^29.7.0"
   }
 }
